@@ -9,10 +9,15 @@
 </head>
 <body>
 
-    <header class="hero">
+    <header class="hero" id="home">
         <nav class="navbar">
-            <div class="logo">VICK.DESIGN</div>
-            <ul class="nav-links">
+            <div class="logo">VICK<span>.DESIGN</span></div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-list">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#service">SERVICE</a></li>
@@ -20,7 +25,6 @@
                 <li><a href="#resume">RESUME</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
         </nav>
 
         <div class="hero-content">
@@ -29,161 +33,158 @@
     </header>
 
     <section id="about" class="about-section">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="assets/profile.JPG" alt="Profile Image">
-            </div>
-            
-           <div class="about-text">
-    <div class="tab-titles">
-        <p class="tab-links active-link" onclick="opentab('about')">ABOUT</p>
-        <p class="tab-links" onclick="opentab('skills')">SKILLS</p>
-    </div>
-
-    <div class="tab-contents active-tab" id="about">
-        <h2>Hi There! I'm <span>Selena</span></h2>
-        <p>I am a professional web designer from Nigeria. I create beautiful professional websites using best practice accessibility.</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <img src="assets/Signature.jpg" alt="Signature" class="signature">
-    </div>
-
-    <div class="tab-contents" id="skills">
-        <div class="skill-item">
-            <span>UI/UX Design</span>
-            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <span>Web Development</span>
-            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <span>WordPress</span>
-            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-        </div>
-    </div>
-</div>
-        </div>
-    </div>
-</section>
-
-<!--Service Section-->
-<section id="service" class="services-section">
-    <div class="container">
-        <h2 class="sub-title">My Services</h2>
-        <div class="services-list">
-            <div>
-                <i class="fas fa-code"></i> <h3>Web Design</h3>
-                <p>Creating visually stunning and user-friendly website designs tailored to your brand.</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div>
-                <i class="fas fa-crop-alt"></i>
-                <h3>UI/UX Design</h3>
-                <p>Designing intuitive interfaces that provide seamless experiences for your users.</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div>
-                <i class="fas fa-app-store"></i>
-                <h3>App Design</h3>
-                <p>Developing modern mobile application layouts for iOS and Android platforms.</p>
-                <a href="#">Learn more</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--Portfolio Section-->
-<section id="work" class="portfolio-section">
-    <div class="container">
-        <h2 class="sub-title">My Work</h2>
-        <div class="work-list">
-            <div class="work">
-                <img src="assets/work 1.JPG" alt="Project 1">
-                <div class="layer">
-                    <h3>Pet Care App</h3>
-                    <p>A specialized app for connecting families with pets worldwide.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/profile.JPG" alt="Profile Image">
                 </div>
-            </div>
-            <div class="work">
-                <img src="assets/work 2.JPG" alt="Project 2">
-                <div class="layer">
-                    <h3>Music App</h3>
-                    <p>The app helps you find and enjoy your favorite tunes effortlessly.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="assets/work 3.JPG" alt="Project 3">
-                <div class="layer">
-                    <h3>Online Shopping</h3>
-                    <p>A clean e-commerce interface designed for high conversion rates.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                
+                <div class="about-text">
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('about')">ABOUT</p>
+                        <p class="tab-links" onclick="opentab('skills')">SKILLS</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="about">
+                        <h2>Hi There! I'm <span>Selena</span></h2>
+                        <p>I am a professional web designer from Nigeria. I create beautiful professional websites using best practice accessibility.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <img src="assets/Signature.jpg" alt="Signature" class="signature">
+                    </div>
+
+                    <div class="tab-contents" id="skills">
+                        <div class="skill-item">
+                            <span>UI/UX Design</span>
+                            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Web Development</span>
+                            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>WordPress</span>
+                            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn-show-more">See More</a>
-    </div>
-</section>
+    </section>
 
-<!--Cridiblity Section-->
-<section class="trust-section">
-    <div class="container">
-        <div class="counter-row">
-            <div class="counter-box">
-                <h2 class="counter-num">154</h2>
-                <p>HAPPY CLIENTS</p>
-            </div>
-            <div class="counter-box">
-                <h2 class="counter-num">15</h2>
-                <p>EXPERIENCE</p>
-            </div>
-            <div class="counter-box">
-                <h2 class="counter-num">256</h2>
-                <p>WORK DONE</p>
-            </div>
-            <div class="counter-box">
-                <h2 class="counter-num">97</h2>
-                <p>AWARD WON</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--Contact Section-->
-<section id="contact" class="contact-section">
-    <div class="container">
-        <div class="contact-row">
-            <div class="contact-left">
-                <h2 class="sub-title">Contact Me</h2>
-                <p><i class="fas fa-paper-plane"></i> contact@friendname.com</p>
-                <p><i class="fas fa-phone-square-alt"></i> +234 800 000 0000</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter-square"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <section id="service" class="services-section">
+        <div class="container">
+            <h2 class="sub-title">My Services</h2>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i> 
+                    <h3>Web Design</h3>
+                    <p>Creating visually stunning and user-friendly website designs tailored to your brand.</p>
+                    <a href="#">Learn more</a>
                 </div>
-                <a href="assets/my-cv.pdf" download class="btn btn-cv">Download CV</a>
-            </div>
-
-            <div class="contact-right">
-                <form action="https://formspree.io/f/mjgapdov" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-submit">Submit</button>
-                </form>
+                <div>
+                    <i class="fas fa-crop-alt"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive interfaces that provide seamless experiences for your users.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-app-store"></i>
+                    <h3>App Design</h3>
+                    <p>Developing modern mobile application layouts for iOS and Android platforms.</p>
+                    <a href="#">Learn more</a>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section id="work" class="portfolio-section">
+        <div class="container">
+            <h2 class="sub-title">My Work</h2>
+            <div class="work-list">
+                <div class="work">
+                    <img src="assets/work 1.JPG" alt="Project 1">
+                    <div class="layer">
+                        <h3>Pet Care App</h3>
+                        <p>A specialized app for connecting families with pets worldwide.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/work 2.JPG" alt="Project 2">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app helps you find and enjoy your favorite tunes effortlessly.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/work 3.JPG" alt="Project 3">
+                    <div class="layer">
+                        <h3>Online Shopping</h3>
+                        <p>A clean e-commerce interface designed for high conversion rates.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-show-more">See More</a>
+        </div>
+    </section>
+
+    <section class="trust-section" id="resume">
+        <div class="container">
+            <div class="counter-row">
+                <div class="counter-box">
+                    <h2 class="counter-num">154</h2>
+                    <p>HAPPY CLIENTS</p>
+                </div>
+                <div class="counter-box">
+                    <h2 class="counter-num">15</h2>
+                    <p>EXPERIENCE</p>
+                </div>
+                <div class="counter-box">
+                    <h2 class="counter-num">256</h2>
+                    <p>WORK DONE</p>
+                </div>
+                <div class="counter-box">
+                    <h2 class="counter-num">97</h2>
+                    <p>AWARD WON</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-row">
+                <div class="contact-left">
+                    <h2 class="sub-title">Contact Me</h2>
+                    <p><i class="fas fa-paper-plane"></i> contact@friendname.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> +234 800 000 0000</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="assets/my-cv.pdf" download class="btn btn-cv">Download CV</a>
+                </div>
+
+                <div class="contact-right">
+                    <form action="https://formspree.io/f/mjgapdov" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright © Sonia Etuhoko. Made with <i class="fas fa-heart"></i> in Nigeria</p>
     </div>
-</section>
 
-<div class="copyright">
-    <p>Copyright © Vick.Design. Made with <i class="fas fa-heart"></i> in Nigeria</p>
-</div>
-
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

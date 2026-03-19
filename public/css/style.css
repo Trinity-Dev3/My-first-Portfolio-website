@@ -11,25 +11,17 @@ html {
     scroll-behavior: smooth;
 }
 
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    width: 100%;
-    /* This looks inside assets/ for your image */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('../assets/hero.JPG') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    aspect-ratio: 1/1;
-}
-
 /* NAVIGATION */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgb(17, 17, 17);
 }
 
 .nav-links {
@@ -44,6 +36,50 @@ html {
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span{
+    color: rgb(255, 107, 107);
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.fa, .fa-brands, .fa-duotone, .fa-light, .fa-regular, .fa-solid, .fa-thin, .fab, .fad, .fal, .far, .fas, .fat {
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* This looks inside assets/ for your image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../assets/hero.JPG') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    aspect-ratio: 1/1;
 }
 
 /* CENTER TEXT */
@@ -516,6 +552,7 @@ form input, form textarea {
     }
     .nav-links a {
         font-size: 11px;
+        padding: 10px;
     }
 
     /* 3. About Section - Stack image on top of text */
@@ -542,5 +579,59 @@ form input, form textarea {
     .sub-title {
         font-size: 30px;
         text-align: center;
+    }
+}
+
+/* --- RESPONSIVE MEDIA QUERIES (Place at the very bottom) --- */
+
+@media only screen and (max-width: 600px) {
+    
+    /* 1. Show the Hamburger Icon and Hide the Menu */
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none; /* This hides the links until you click the menu icon */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        padding-top: 100px;
+        z-index: 1000;
+        transition: 0.5s;
+    }
+
+    /* 2. This class is toggled by your main.js */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* 3. Fluid Typography for Hero */
+    .hero-content h1 {
+        font-size: clamp(30px, 10vw, 40px);
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* 4. Stacking Sections */
+    .about-grid, .contact-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image, .about-text, .contact-left, .contact-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    /* 5. Center the Heading Underlines on Mobile */
+    .about-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

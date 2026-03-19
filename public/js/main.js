@@ -1,62 +1,64 @@
+// 1. TYPING ANIMATION (Hero Section)
+const typingText = "I Am A Web Designer";
+let charIndex = 0;
+
+function type() {
+    if (charIndex < typingText.length) {
+        document.querySelector('.hero-content h1').innerHTML = 
+            typingText.substring(0, charIndex + 1) + '<span class="cursor">|</span>';
+        charIndex++;
+        setTimeout(type, 150);
+    }
+}
+
+// 2. TAB SWITCHING LOGIC (About Section)
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
-// Check maintenance status when page loads
-fetch('http://localhost:5000/api/status')
-    .then(res => res.json())
-    .then(data => {
-        if(data.maintenance) {
-            document.body.innerHTML = "<div style='text-align:center; padding:100px;'><h1>Under Maintenance</h1><p>We'll be back shortly!</p></div>";
-        }
-    });
-
 function opentab(tabname) {
-    // Remove the active class from all links
-    for (tablink of tablinks) {
+    for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
-    // Hide all tab contents
-    for (tabcontent of tabcontents) {
+    for (let tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
     }
-    // Add active class back to the clicked link and show content
     event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
+    const targetTab = document.getElementById(tabname);
+    if (targetTab) {
+        targetTab.classList.add("active-tab");
+    }
 }
 
-// FILE: js/main.js
+// 3. MOBILE MENU TOGGLE (Updated for Cancel Button)
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+const menuIcon = mobileMenu.querySelector('i');
 
-const contactForm = document.querySelector('form[name="submit-to-google-sheet"]');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Stop the page from refreshing
-
-    // Collect data from the form
-    const formData = {
-        name: contactForm.Name.value,
-        email: contactForm.Email.value,
-        message: contactForm.Message.value
-    };
-
-    // Send data to your Node.js backend
-    fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.success) {
-            alert("Message sent successfully!");
-            contactForm.reset(); // Clear the form
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Swap icons: Bars <-> Times (X)
+        if (navLinks.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
         } else {
-            alert("Something went wrong. Please try again.");
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Server is currently offline.");
+    });
+}
+
+// Close menu when a link is clicked (Improved UX)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuIcon.classList.add('fa-bars');
+        menuIcon.classList.remove('fa-times');
     });
 });
+
+// 4. INITIALIZE ON LOAD
+window.onload = () => {
+    type();
+};
